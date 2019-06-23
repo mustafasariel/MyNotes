@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Note:IEntity
+    public class Category : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Decsription { get; set; }
-        public DateTime CreateDate { get; set; }
-        
     }
 }

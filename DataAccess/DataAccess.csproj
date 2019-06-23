@@ -48,12 +48,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\NoteDal.cs" />
-    <Compile Include="NoteContex.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\INoteDal.cs" />
+    <Compile Include="Concrete\EF\EfCategoryDal.cs" />
+    <Compile Include="Concrete\EF\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EF\EfNoteDal.cs" />
+    <Compile Include="Concrete\EF\MyNoteContex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
+    <Folder Include="Concrete\NHibernate\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

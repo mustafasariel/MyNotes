@@ -1,19 +1,26 @@
 ﻿using DataAccess.Concrete;
+using DataAccess.Concrete.EF;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccess.Abstract;
+using Business.Abstract;
 
 namespace Business.Concrete
 {
-    public class NoteManager
+    public class NoteManager:INoteService
     {
-        NoteDal noteDal = new NoteDal();
+        INoteDal noteDal;
+        public NoteManager(INoteDal noteDal)
+        {
+            this.noteDal = noteDal;
+        }
         public List<Note> GetAll()
         {
-            return noteDal.GetAllNotes();
+            return noteDal.GetAll();
         }
         public void Add(Note note)
         {

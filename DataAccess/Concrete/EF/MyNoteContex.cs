@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess
+namespace DataAccess.Concrete.EF
 {
-   public class NoteContex:DbContext
+   public class MyNoteContex:DbContext
     {
         public DbSet<Note> Notes { get; set; }
-        public NoteContex():base("name=NoteContext")
+        public DbSet<Category> Categories { get; set; }
+
+        public MyNoteContex():base("name=MyNoteContext")
         {
 
         }
