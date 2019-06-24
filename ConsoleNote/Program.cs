@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Entities.Concrete;
 
 namespace ConsoleNote
 {
@@ -26,18 +27,18 @@ namespace ConsoleNote
         private static void files()
         {
             file = new FileManager(new EfFileDal());
-            file.Add(new Entities.Concrete.File { Path = "c:\\abc.txt" });
+            file.Add(new File { Path = "c:\\abc.txt" });
             var lst = file.GetAll();
             foreach (var item in lst)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Path);
             }
         }
 
         static void notes()
         {
             note = new NoteManager(new EfNoteDal());
-            note.Add(new Entities.Concrete.Note { Name = "test", Decsription = "makale yaz oğlum", CreateDate = DateTime.Now });
+            note.Add(new Note { Name = "test", Decsription = "makale yaz oğlum", CreateDate = DateTime.Now });
 
             var lst = note.GetAll();
 
@@ -49,7 +50,7 @@ namespace ConsoleNote
         static void category()
         {
             cat = new CategoryManager(new EfCategoryDal());
-            cat.Add(new Entities.Concrete.Category { Name = "Programlama" });
+            cat.Add(new Category { Name = "Programlama" });
 
             var lst = cat.GetAll();
 
@@ -61,7 +62,7 @@ namespace ConsoleNote
         static void users()
         {
             user = new UserManager(new EfUserDal());
-            user.Add(new Entities.Concrete.User { FullName = "mustafa sarıel", Password = "12345", UserName = "msariel" });
+            user.Add(new User { FullName = "mustafa sarıel", Password = "12345", UserName = "msariel2" });
 
             var lst = user.GetAll();
             foreach (var item in lst)

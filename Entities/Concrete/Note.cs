@@ -13,6 +13,7 @@ namespace Entities.Concrete
         public string Name { get; set; }
         public string Decsription { get; set; }
         public DateTime CreateDate { get; set; }
-        
+        public Category Category { get; set; }
+        public User User { get; set; }
     }
 }
