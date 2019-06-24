@@ -50,11 +50,15 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\IFileDal.cs" />
     <Compile Include="Abstract\INoteDal.cs" />
+    <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\EF\EfCategoryDal.cs" />
     <Compile Include="Concrete\EF\EfEntityRepositoryBase.cs" />
+    <Compile Include="Concrete\EF\EfFileDal.cs" />
     <Compile Include="Concrete\EF\EfNoteDal.cs" />
-    <Compile Include="Concrete\EF\MyNoteContex.cs" />
+    <Compile Include="Concrete\EF\EfUserDal.cs" />
+    <Compile Include="Concrete\EF\MyContex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

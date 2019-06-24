@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EF
 {
-   public class MyNoteContex:DbContext
+    public class MyContex : DbContext
     {
         public DbSet<Note> Notes { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<File> Files { get; set; }
 
-        public MyNoteContex():base("name=MyNoteContext")
+        public MyContex() : base("name=MyContext")
         {
-
+            Database.SetInitializer<MyContex>(new DropCreateDatabaseAlways<MyContex>());
         }
     }
 }

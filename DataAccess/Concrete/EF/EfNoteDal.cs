@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EF
 {
-    public class EfNoteDal:EfEntityRepositoryBase<Note,MyNoteContex>,INoteDal
+    public class EfNoteDal:EfEntityRepositoryBase<Note,MyContex>,INoteDal
     {
        
     }

@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Abstract\IEntity.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\File.cs" />
     <Compile Include="Concrete\Note.cs" />
+    <Compile Include="Concrete\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

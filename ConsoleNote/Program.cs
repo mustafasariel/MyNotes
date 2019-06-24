@@ -11,22 +11,43 @@ namespace ConsoleNote
 {
     class Program
     {
-       static INoteService note;
+        static INoteService note;
         static ICategoryService cat;
+        static IUserService user;
+        static IFileService file;
         static void Main(string[] args)
         {
+            files();
+            users();
+            notes();
+            category();
+        }
 
-            //note = new NoteManager(new EfNoteDal());
-            //note.Add(new Entities.Concrete.Note { Name = "test", Decsription = "makale yaz oğlum", CreateDate = DateTime.Now });
+        private static void files()
+        {
+            file = new FileManager(new EfFileDal());
+            file.Add(new Entities.Concrete.File { Path = "c:\\abc.txt" });
+            var lst = file.GetAll();
+            foreach (var item in lst)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
-            //var lst = note.GetAll();
+        static void notes()
+        {
+            note = new NoteManager(new EfNoteDal());
+            note.Add(new Entities.Concrete.Note { Name = "test", Decsription = "makale yaz oğlum", CreateDate = DateTime.Now });
 
-            //foreach (var item in lst)
-            //{
-            //    Console.WriteLine(item.Name);
-            //}
+            var lst = note.GetAll();
 
-
+            foreach (var item in lst)
+            {
+                Console.WriteLine(item.Name);
+            }
+        }
+        static void category()
+        {
             cat = new CategoryManager(new EfCategoryDal());
             cat.Add(new Entities.Concrete.Category { Name = "Programlama" });
 
@@ -36,7 +57,17 @@ namespace ConsoleNote
             {
                 Console.WriteLine(item.Name);
             }
+        }
+        static void users()
+        {
+            user = new UserManager(new EfUserDal());
+            user.Add(new Entities.Concrete.User { FullName = "mustafa sarıel", Password = "12345", UserName = "msariel" });
 
+            var lst = user.GetAll();
+            foreach (var item in lst)
+            {
+                Console.WriteLine(item.FullName);
+            }
         }
     }
 }

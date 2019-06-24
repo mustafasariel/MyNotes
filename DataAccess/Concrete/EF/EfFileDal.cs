@@ -8,11 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EF
 {
-    public class EfCategoryDal : EfEntityRepositoryBase<Category, MyContex>, ICategoryDal
+    public class EfFileDal : EfEntityRepositoryBase<File, MyContex>, IFileDal
     {
 
     }
-
-   
-  
 }

@@ -24,7 +24,6 @@ namespace DataAccess.Concrete.EF
                 context.SaveChanges();
             }
         }
-
         public void Delete(TEntity entity)
         {
             using (TContext context = new TContext())

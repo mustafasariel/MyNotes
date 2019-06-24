@@ -8,11 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EF
 {
-    public class EfCategoryDal : EfEntityRepositoryBase<Category, MyContex>, ICategoryDal
+    public class EfUserDal : EfEntityRepositoryBase<User, MyContex>, IUserDal
     {
-
     }
-
-   
-  
 }
