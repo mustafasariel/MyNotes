@@ -50,7 +50,7 @@ namespace ConsoleNote
         static void category()
         {
             cat = new CategoryManager(new EfCategoryDal());
-            cat.Add(new Category { Name = "Programlama" });
+            cat.Add(new Category { Name = "" });
 
             var lst = cat.GetAll();
 
@@ -62,7 +62,7 @@ namespace ConsoleNote
         static void users()
         {
             user = new UserManager(new EfUserDal());
-            user.Add(new User { FullName = "mustafa sarıel", Password = "12345", UserName = "msariel2" });
+            user.Add(new User { FullName = "mustafa sarıel", Password = "12345", UserName = "msariel" });
 
             var lst = user.GetAll();
             foreach (var item in lst)

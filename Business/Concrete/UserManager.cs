@@ -15,22 +15,14 @@ namespace Business.Concrete
         public IUserDal dal { get; }
         public UserManager(IUserDal dal)
         {
-           this.dal = dal;
+            this.dal = dal;
         }
-       
+
         public void Add(User user)
         {
-            UserValidator validationRules = new UserValidator();
-            var result= validationRules.Validate(user);
+            Utilities.ValidationTool.Validate(new UserValidator(), user);
+            this.dal.Add(user);
 
-            if (result.IsValid)
-            {
-                this.dal.Add(user);
-            }
-            else
-            {
-                throw new FluentValidation.ValidationException(result.Errors);
-            }
         }
         public List<User> GetAll()
         {

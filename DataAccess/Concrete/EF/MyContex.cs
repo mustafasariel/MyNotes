@@ -17,7 +17,9 @@ namespace DataAccess.Concrete.EF
 
         public MyContex() : base("name=MyContext")
         {
-            Database.SetInitializer<MyContex>(new DropCreateDatabaseAlways<MyContex>());
+            // Database.SetInitializer<MyContex>(new DropCreateDatabaseAlways<MyContex>());
+
+            Database.SetInitializer<MyContex>(new CreateDatabaseIfNotExists<MyContex>());
         }
     }
 }
